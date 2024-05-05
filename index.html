@@ -25,8 +25,15 @@
       right: 10px; /* Position from right edge */
       bottom: 10px; /* Position from bottom edge */
       cursor: pointer;
+      display: flex; /* Makes the button act like a container */
+      justify-content: space-between; /* Distributes content evenly */
+      align-items: center; /* Aligns content vertically */
+    }
+    .languageSwitch span {
       color: blue;
       text-decoration: underline;
+      font-weight: bold; /* Makes the text stand out */
+      margin-right: 5px;
     }
     h1 {
       font-size: 22px;
@@ -56,50 +63,82 @@
 <body>
   <header>
     <img src="https://imgur.com/8fj5yRB.jpg" alt="Logo" class="logo">
-    <div class="languageSwitch" id="languageSwitch">PT</div>
+    <div class="languageSwitch" id="languageSwitch">
+      <span id="en">EN</span>
+      <span id="pt">PT</span>
+      <span id="de">DE</span>
+      <span id="fr">FR</span>
+    </div>
   </header>
   <section>
-    <h1 data-en="We Provide the following services:" data-pt="Nós fornecemos os seguintes serviços:">We Provide the following services:</h1>
+    <h1 data-en="We Provide the following services:" data-pt="Nós fornecemos os seguintes serviços:" data-de="Wir bieten folgende Dienstleistungen an:" data-fr="Nous fournissons les services suivants:">We Provide the following services:</h1>
     <ul>
-      <li data-en="Relocations" data-pt="Mudanças">Relocations</li>
-      <li data-en="Packing" data-pt="Embalamos">Packing</li>
-      <li data-en="Unpacking" data-pt="Desembalamos">Unpacking</li>
-      <li data-en="Dismantling" data-pt="Desmontagem">Dismantling</li>
-      <li data-en="Reassembling" data-pt="Remontagem">Reassembling</li>
-      <li data-en="Storage" data-pt="Armazenamento">Storage</li>
-      <li data-en="Cleaning" data-pt="Limpeza">Cleaning</li>
-      <li data-en="Handyman Work" data-pt="Pequenos Serviços">Handyman Work</li>
+        <li data-en="Relocations" data-pt="Mudanças" data-de="Umzüge" data-fr="Déménagements">Relocations</li>
+        <li data-en="Packing" data-pt="Embalamos" data-de="Verpacken" data-fr="Emballage">Packing</li>
+        <li data-en="Unpacking" data-pt="Desembalamos" data-de="Auspacken" data-fr="Déballage">Unpacking</li>
+        <li data-en="Dismantling" data-pt="Desmontagem" data-de="Demontage" data-fr="Démontage">Dismantling</li>
+        <li data-en="Reassembling" data-pt="Remontagem" data-de="Wieder Montage" data-fr="Réassemblage">Reassembling</li>
+        <li data-en="Storage" data-pt="Armazenamento" data-de="Lagerung" data-fr="Stockage">Storage</li>
+        <li data-en="Cleaning" data-pt="Limpeza" data-de="Reinigung" data-fr="Nettoyage">Cleaning</li>
+        <li data-en="Handyman Work" data-pt="Pequenos Serviços" data-de="Handwerkerarbeit" data-fr="Travaux de bricolage">Handyman Work</li>
     </ul>
+      
   </section>
 
   <script>
     var language = 'en';
+    var enButton = document.getElementById('en');
+    enButton.style.color = 'grey';
+    enButton.style.textDecoration = 'none';
+    var ptButton = document.getElementById('pt');
+    var deButton = document.getElementById('de');
+    var frButton = document.getElementById('fr');
 
     function toggleLanguage() {
-      var elementsToTranslate = document.querySelectorAll('[data-en], [data-pt]');
+      var elementsToTranslate = document.querySelectorAll('[data-en], [data-pt], [data-de], [data-fr]');
 
       elementsToTranslate.forEach(function(element) {
         var englishText = element.getAttribute('data-en');
         var portugueseText = element.getAttribute('data-pt');
+        var germanText = element.getAttribute('data-de');
+        var frenchText = element.getAttribute('data-fr');
 
-        if (language === 'en') {
-          element.textContent = portugueseText;
-        } else {
-          element.textContent = englishText;
-        }
-      });
-
-      if (language === 'en') {
-        document.getElementById('languageSwitch').textContent = 'EN';
-        language = 'pt';
-      } else {
-        document.getElementById('languageSwitch').textContent = 'PT';
-        language = 'en';
-      }
+        if (this.id === 'en') {
+      element.textContent = englishText;
+    } else if (this.id === 'pt') {
+      element.textContent = portugueseText;
+    } else if (this.id === 'de') {
+      element.textContent = germanText;
+    } else if (this.id === 'fr') {
+      element.textContent = frenchText;
     }
+  }, this); // Pass the current button as 'this'
 
-    // Attach click event listener to the button
-    document.getElementById('languageSwitch').addEventListener('click', toggleLanguage);
+  // Toggling button styles
+  enButton.style.pointerEvents = this.id === 'en' ? 'none' : 'auto';
+  ptButton.style.pointerEvents = this.id === 'pt' ? 'none' : 'auto';
+  deButton.style.pointerEvents = this.id === 'de' ? 'none' : 'auto';
+  frButton.style.pointerEvents = this.id === 'fr' ? 'none' : 'auto';
+
+  enButton.style.color = this.id === 'en' ? 'grey' : 'blue';
+  ptButton.style.color = this.id === 'pt' ? 'grey' : 'blue';
+  deButton.style.color = this.id === 'de' ? 'grey' : 'blue';
+  frButton.style.color = this.id === 'fr' ? 'grey' : 'blue';
+
+  enButton.style.textDecoration = this.id === 'en' ? 'none' : 'underline';
+  ptButton.style.textDecoration = this.id === 'pt' ? 'none' : 'underline';
+  deButton.style.textDecoration = this.id === 'de' ? 'none' : 'underline';
+  frButton.style.textDecoration = this.id === 'fr' ? 'none' : 'underline';
+
+  language = this.id; // Set language based on the clicked button's id
+
+  }
+
+  // Attach click event listeners to the buttons
+  enButton.addEventListener('click', toggleLanguage);
+  ptButton.addEventListener('click', toggleLanguage);
+  deButton.addEventListener('click', toggleLanguage);
+  frButton.addEventListener('click', toggleLanguage);
   </script>
 </body>
 </html>
