@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oliveira Relocations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      position: relative;
+      text-align: center;
+    }
+    .logo {
+      width: 370px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .languageSwitch {
+      position: absolute;
+      right: 10px; /* Position from right edge */
+      bottom: 10px; /* Position from bottom edge */
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    ul {
+      font-size: 20px;
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    li::before {
+      content: "\2192";
+      color: #000000;
+      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      left: -20px;
+      top: -5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://imgur.com/8fj5yRB.jpg" alt="Logo" class="logo">
+    <div class="languageSwitch" id="languageSwitch">PT</div>
+  </header>
+  <section>
+    <h1 data-en="We Provide the following services:" data-pt="Nós fornecemos os seguintes serviços:">We Provide the following services:</h1>
+    <ul>
+      <li data-en="Relocations" data-pt="Mudanças">Relocations</li>
+      <li data-en="Packing" data-pt="Embalagem">Packing</li>
+      <li data-en="Unpacking" data-pt="Desembalagem">Unpacking</li>
+      <li data-en="Dismantling" data-pt="Desmontagem">Dismantling</li>
+      <li data-en="Reassembling" data-pt="Remontagem">Reassembling</li>
+      <li data-en="Storage" data-pt="Armazenamento">Storage</li>
+      <li data-en="Cleaning" data-pt="Limpeza">Cleaning</li>
+      <li data-en="Handyman Work" data-pt="Serviço de marcenaria">Handyman Work</li>
+    </ul>
+  </section>
+
+  <script>
+    var language = 'en';
+
+    function toggleLanguage() {
+      var elementsToTranslate = document.querySelectorAll('[data-en], [data-pt]');
+
+      elementsToTranslate.forEach(function(element) {
+        var englishText = element.getAttribute('data-en');
+        var portugueseText = element.getAttribute('data-pt');
+
+        if (language === 'en') {
+          element.textContent = portugueseText;
+        } else {
+          element.textContent = englishText;
+        }
+      });
+
+      if (language === 'en') {
+        document.getElementById('languageSwitch').textContent = 'EN';
+        language = 'pt';
+      } else {
+        document.getElementById('languageSwitch').textContent = 'PT';
+        language = 'en';
+      }
+    }
+
+    // Attach click event listener to the button
+    document.getElementById('languageSwitch').addEventListener('click', toggleLanguage);
+  </script>
+</body>
+</html>
