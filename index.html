@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oliveira Relocations</title>
   <style>
+    section {
+      padding-left: 20px;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -22,17 +25,17 @@
     }
     .languageSwitch {
       position: absolute;
-      right: 10px; /* Position from right edge */
-      bottom: 10px; /* Position from bottom edge */
+      right: 10px;
+      bottom: 10px;
       cursor: pointer;
-      display: flex; /* Makes the button act like a container */
-      justify-content: space-between; /* Distributes content evenly */
-      align-items: center; /* Aligns content vertically */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .languageSwitch span {
       color: blue;
       text-decoration: underline;
-      font-weight: bold; /* Makes the text stand out */
+      font-weight: bold;
       margin-right: 5px;
     }
     h1 {
@@ -112,9 +115,8 @@
     } else if (this.id === 'fr') {
       element.textContent = frenchText;
     }
-  }, this); // Pass the current button as 'this'
+  }, this);
 
-  // Toggling button styles
   enButton.style.pointerEvents = this.id === 'en' ? 'none' : 'auto';
   ptButton.style.pointerEvents = this.id === 'pt' ? 'none' : 'auto';
   deButton.style.pointerEvents = this.id === 'de' ? 'none' : 'auto';
@@ -130,11 +132,10 @@
   deButton.style.textDecoration = this.id === 'de' ? 'none' : 'underline';
   frButton.style.textDecoration = this.id === 'fr' ? 'none' : 'underline';
 
-  language = this.id; // Set language based on the clicked button's id
+  language = this.id;
 
   }
 
-  // Attach click event listeners to the buttons
   enButton.addEventListener('click', toggleLanguage);
   ptButton.addEventListener('click', toggleLanguage);
   deButton.addEventListener('click', toggleLanguage);
