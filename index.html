@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oliveira Relocations</title>
   <style>
-    section {
-      padding-left: 20px;
+    /* Responsive design using flexbox */
+    .serviceBoxContainer {
+      display: flex;
+      flex-wrap: wrap;
+      /* Allow boxes to wrap onto multiple lines */
+      justify-content: space-between;
+      /* Distribute boxes evenly */
+      margin: 0 auto;
+      /* Center boxes horizontally */
+      width: 80%;
+      /* Limit container width for larger screens */
     }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+
+    .serviceBox {
+      width: 100%;
+      margin: 20px auto;
+      /* Increase the top and bottom margin to add more space */
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #cccccc80;
+      /* Darker shade of grey */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Increase the spread radius value for more depth */
       box-sizing: border-box;
     }
+
+    .serviceBox h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .serviceBox p {
+      font-size: 15px;
+    }
+
+    /* Header styling */
     header {
       position: relative;
       text-align: center;
     }
+
+    h1 {
+      font-size: 25px;
+    }
+
     .logo {
       width: 370px;
       height: auto;
       margin-bottom: 10px;
     }
+
     .languageSwitch {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
+      position: relative;
+      /* Change absolute to relative positioning */
       cursor: pointer;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      /* Align buttons to the right */
       align-items: center;
+      margin-top: 10px;
+      /* Add margin to separate from the logo */
     }
+
     .languageSwitch span {
-      color: blue;
-      text-decoration: underline;
+      color: rgb(0, 0, 0);
       font-weight: bold;
       margin-right: 5px;
-    }
-    h1 {
-      font-size: 22px;
-    }
-    ul {
-      font-size: 20px;
-      list-style: none;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
-      position: relative;
-    }
-    li::before {
-      content: "\2192";
-      color: #000000;
-      font-weight: bold;
-      font-size: 20px;
-      position: absolute;
-      left: -20px;
-      top: -5px;
+      font-size: 12px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <img src="https://imgur.com/8fj5yRB.jpg" alt="Logo" class="logo">
@@ -72,24 +90,95 @@
       <span id="de">DE</span>
       <span id="fr">FR</span>
     </div>
+    <h1 data-en="We Provide the following services:" data-pt="Nós fornecemos os seguintes serviços:"
+      data-de="Wir bieten folgende Dienstleistungen an:" data-fr="Nous fournissons les services suivants:">We Provide
+      the following services:</h1>
   </header>
   <section>
-    <h1 data-en="We Provide the following services:" data-pt="Nós fornecemos os seguintes serviços:" data-de="Wir bieten folgende Dienstleistungen an:" data-fr="Nous fournissons les services suivants:">We Provide the following services:</h1>
-    <ul>
-        <li data-en="Relocations" data-pt="Mudanças" data-de="Umzüge" data-fr="Déménagements">Relocations</li>
-        <li data-en="Packing" data-pt="Embalamos" data-de="Verpacken" data-fr="Emballage">Packing</li>
-        <li data-en="Unpacking" data-pt="Desembalamos" data-de="Auspacken" data-fr="Déballage">Unpacking</li>
-        <li data-en="Dismantling" data-pt="Desmontagem" data-de="Demontage" data-fr="Démontage">Dismantling</li>
-        <li data-en="Reassembling" data-pt="Remontagem" data-de="Wieder Montage" data-fr="Réassemblage">Reassembling</li>
-        <li data-en="Storage" data-pt="Armazenamento" data-de="Lagerung" data-fr="Stockage">Storage</li>
-        <li data-en="Cleaning" data-pt="Limpeza" data-de="Reinigung" data-fr="Nettoyage">Cleaning</li>
-        <li data-en="Handyman Work" data-pt="Pequenos Serviços" data-de="Handwerkerarbeit" data-fr="Travaux de bricolage">Handyman Work</li>
-    </ul>
-      
+    <div class="serviceBoxContainer">
+      <div class="serviceBox" data-en="Relocations" data-pt="Mudanças" data-de="Umzug" data-fr="Déménagements">
+        <h3>Relocations</h3>
+        <p data-en="We offer a complete moving service, paying attention to every detail to make your experience as smooth as possible. From securely packing your belongings to arranging them at the final destination, we are here to ensure that everything goes seamlessly."
+          data-pt="Mudanças- Oferecemos um serviço completo de mudanças, com atenção a todos os detalhes para tornar a sua experiência o mais tranquila possível. Desde o embalamento dos seus pertences com segurança à arrumação no destino final, estamos aqui para garantir que tudo corra sem problemas."
+          data-de="Wir bieten einen umfassenden Umzugsservice, der auf jedes Detail achtet, um Ihre Erfahrung so reibungslos wie möglich zu gestalten. Vom sicheren Verpacken Ihrer Sachen bis hin zur Anordnung am endgültigen Ziel sind wir hier, um sicherzustellen, dass alles reibungslos verläuft."
+          data-fr="Nous proposons un service complet de déménagement, en portant une attention particulière à chaque détail pour rendre votre expérience aussi fluide que possible. Du conditionnement sécurisé de vos biens à leur arrangement à la destination finale, nous sommes là pour garantir que tout se passe sans encombre.">
+          We offer a complete moving service, paying attention to every detail to make your experience as smooth as
+          possible. From securely packing your belongings to arranging them at the final destination, we are here to
+          ensure that everything goes seamlessly.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Packing" data-pt="Embalamos" data-de="Verpackung" data-fr="Emballage">
+        <h3>Packing</h3>
+        <p data-en="If requested, we pack and protect all items individually with the utmost care, ensuring they arrive safely at their destination."
+          data-pt="Se requisitado, embalamos e protegemos todos os artigos individualmente com o máximo cuidado, garantindo que chegam em segurança ao seu destino."
+          data-de="Auf Wunsch verpacken und schützen wir alle Gegenstände einzeln mit größter Sorgfalt, um sicherzustellen, dass sie sicher an ihr Ziel gelangen."
+          data-fr="Sur demande, nous emballons et protégeons tous les articles individuellement avec le plus grand soin, afin de garantir qu'ils arrivent en toute sécurité à leur destination.">
+          If requested, we pack and protect all items individually with the utmost care, ensuring they arrive safely at their destination.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Unpacking" data-pt="Desembalamos" data-de="Auspacken" data-fr="Déballage">
+        <h3>Unpacking</h3>
+        <p data-en="Upon arrival at the destination, we proceed with unpacking and arranging the items so you don't have to worry about a thing."
+          data-pt="Já no destino, procedemos ao desembalamento e arrumação dos artigos para que não tenha de se preocupar com nada."
+          data-de="Bei Ankunft am Zielort packen wir aus und ordnen die Gegenstände so an, dass Sie sich um nichts kümmern müssen."
+          data-fr="À l'arrivée à la destination, nous procédons au déballage et à l'arrangement des articles pour que vous n'ayez pas à vous soucier de quoi que ce soit.">
+          Upon arrival at the destination, we proceed with unpacking and arranging the items so you don't have to worry about a thing.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Dismantling" data-pt="Desmontagem" data-de="Demontage" data-fr="Démontage">
+        <h3>Dismantling</h3>
+        <p data-en="If necessary, for larger furniture pieces, we professionally disassemble them into smaller parts, protecting each and every one with special blankets before wrapping them in film."
+          data-pt="Se necessário, para mobília maior, desmontamos profissionalmente em peças menores, protegendo todas, sem exceção, com mantas especiais antes de as envolver em película."
+          data-de="Falls erforderlich, für größere Möbelstücke zerlegen wir sie professionell in kleinere Teile und schützen jedes einzelne mit speziellen Decken, bevor wir sie in Folie einwickeln."
+          data-fr="Si nécessaire, pour les meubles volumineux, nous les démontons professionnellement en pièces plus petites, en protégeant chacune avec des couvertures spéciales avant de les envelopper dans du film.">
+          If necessary, for larger furniture pieces, we professionally disassemble them into smaller parts, protecting each and every one with special blankets before wrapping them in film.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Reassembling" data-pt="Remontagem" data-de="Montage"
+        data-fr="Remontage">
+        <h3>Reassembling</h3>
+        <p data-en="Upon reaching the destination, we carry out the assembly of furniture and other items, if necessary."
+          data-pt="Ao chegar ao destino, realizamos a montagem da mobília e outros itens, se necessário."
+          data-de="Nach Erreichen des Ziels führen wir die Montage von Möbeln und anderen Gegenständen durch, falls erforderlich."
+          data-fr="À l'arrivée à destination, nous effectuons le montage des meubles et autres articles, si nécessaire.">
+          Upon reaching the destination, we carry out the assembly of furniture and other items, if necessary.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Storage" data-pt="Armazenamento" data-de="Lagerung" data-fr="Stockage">
+        <h3>Storage</h3>
+        <p data-en="We offer secure storage for your belongings, short or long term."
+          data-pt="Oferecemos armazenamento seguro para os seus pertences, a curto ou a longo prazo."
+          data-de="Wir bieten sichere Lagerung für Ihre Sachen, kurz- oder langfristig."
+          data-fr="Nous proposons un stockage sécurisé pour vos biens, à court ou à long terme.">
+          We offer secure storage for your belongings, short or long term.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Cleaning" data-pt="Limpeza" data-de="Reinigung" data-fr="Nettoyage">
+        <h3>Cleaning</h3>
+        <p data-en="Our cleaning service, either superficial or detailed depending on the agreement with the client, ensures that both houses are left spotless."
+          data-pt="O nosso serviço de limpeza superficial ou ao pormenor, dependendo do acordo feito com o cliente, garante que ambas as casas fiquem impecáveis."
+          data-de="Unser Reinigungsservice, entweder oberflächlich oder detailliert je nach Vereinbarung mit dem Kunden, sorgt dafür, dass beide Häuser makellos hinterlassen werden."
+          data-fr="Notre service de nettoyage, superficiel ou détaillé selon l'accord avec le client, garantit que les deux maisons sont laissées impeccables.">
+          Our cleaning service, either superficial or detailed depending on the agreement with the client, ensures that both houses are left spotless.
+        </p>
+      </div>
+      <div class="serviceBox" data-en="Minor Services" data-pt="Pequenos Serviços" data-de="Kleinere Dienstleistungen"
+        data-fr="Petits services">
+        <h3>Handyman Work</h3>
+        <p data-en="We provide minor wall repair services for small holes resulting from the installation of frames, mirrors, among others. Additionally, we also carry out the installation of lamps and other decorative elements in your new home."
+          data-pt="Serviços de reparação de pequenos furos nas paredes, resultantes da instalação de quadros, espelhos, entre outros. Além disso, também realizamos a instalação de abajures e outros elementos decorativos na sua casa nova."
+          data-de="Wir bieten Reparaturdienste für kleine Wandlöcher an, die durch die Installation von Bildern, Spiegeln und anderen Gegenständen entstanden sind. Darüber hinaus führen wir auch die Installation von Lampen und anderen dekorativen Elementen in Ihrem neuen Zuhause durch."
+          data-fr="Nous proposons des services de réparation de petits trous dans les murs, résultant de l'installation de cadres, de miroirs, entre autres. De plus, nous réalisons également l'installation de lampes et autres éléments décoratifs dans votre nouvelle maison.">
+          We provide minor wall repair services for small holes resulting from the installation of frames, mirrors, among others. Additionally, we also carry out the installation of lamps and other decorative elements in your new home.
+        </p>
+      </div>
+    </div>
   </section>
+
 
   <script>
     var language = 'en';
+    var enButton = document.getElementById('en');
     var enButton = document.getElementById('en');
     enButton.style.color = 'grey';
     enButton.style.textDecoration = 'none';
@@ -98,48 +187,60 @@
     var frButton = document.getElementById('fr');
 
     function toggleLanguage() {
-      var elementsToTranslate = document.querySelectorAll('[data-en], [data-pt], [data-de], [data-fr]');
+      var selectedLanguage = this.id;
 
-      elementsToTranslate.forEach(function(element) {
-        var englishText = element.getAttribute('data-en');
-        var portugueseText = element.getAttribute('data-pt');
-        var germanText = element.getAttribute('data-de');
-        var frenchText = element.getAttribute('data-fr');
+      if (selectedLanguage !== language) { // Check if the selected language is different from the current language
+        var elementsToTranslate = document.querySelectorAll('.serviceBox');
 
-        if (this.id === 'en') {
-      element.textContent = englishText;
-    } else if (this.id === 'pt') {
-      element.textContent = portugueseText;
-    } else if (this.id === 'de') {
-      element.textContent = germanText;
-    } else if (this.id === 'fr') {
-      element.textContent = frenchText;
+        elementsToTranslate.forEach(function (element) {
+          var text;
+          switch (selectedLanguage) {
+            case 'en':
+              text = element.getAttribute('data-en');
+              break;
+            case 'pt':
+              text = element.getAttribute('data-pt');
+              break;
+            case 'de':
+              text = element.getAttribute('data-de');
+              break;
+            case 'fr':
+              text = element.getAttribute('data-fr');
+              break;
+            default:
+              text = element.getAttribute('data-en'); // Default to English if language is not recognized
+          }
+
+          element.querySelector('h3').textContent = text;
+          var paragraph = element.querySelector('p');
+          if (paragraph) {
+            paragraph.textContent = paragraph.getAttribute('data-' + selectedLanguage);
+          }
+          var headerTitle = document.querySelector('h1');
+          headerTitle.textContent = headerTitle.getAttribute('data-' + selectedLanguage);
+        });
+
+        // Update language variable
+        language = selectedLanguage;
+
+        // Toggling button styles
+        enButton.style.pointerEvents = language === 'en' ? 'none' : 'auto';
+        ptButton.style.pointerEvents = language === 'pt' ? 'none' : 'auto';
+        deButton.style.pointerEvents = language === 'de' ? 'none' : 'auto';
+        frButton.style.pointerEvents = language === 'fr' ? 'none' : 'auto';
+
+        enButton.style.color = language === 'en' ? 'grey' : 'black';
+        ptButton.style.color = language === 'pt' ? 'grey' : 'black';
+        deButton.style.color = language === 'de' ? 'grey' : 'black';
+        frButton.style.color = language === 'fr' ? 'grey' : 'black';
+      }
     }
-  }, this);
 
-  enButton.style.pointerEvents = this.id === 'en' ? 'none' : 'auto';
-  ptButton.style.pointerEvents = this.id === 'pt' ? 'none' : 'auto';
-  deButton.style.pointerEvents = this.id === 'de' ? 'none' : 'auto';
-  frButton.style.pointerEvents = this.id === 'fr' ? 'none' : 'auto';
-
-  enButton.style.color = this.id === 'en' ? 'grey' : 'blue';
-  ptButton.style.color = this.id === 'pt' ? 'grey' : 'blue';
-  deButton.style.color = this.id === 'de' ? 'grey' : 'blue';
-  frButton.style.color = this.id === 'fr' ? 'grey' : 'blue';
-
-  enButton.style.textDecoration = this.id === 'en' ? 'none' : 'underline';
-  ptButton.style.textDecoration = this.id === 'pt' ? 'none' : 'underline';
-  deButton.style.textDecoration = this.id === 'de' ? 'none' : 'underline';
-  frButton.style.textDecoration = this.id === 'fr' ? 'none' : 'underline';
-
-  language = this.id;
-
-  }
-
-  enButton.addEventListener('click', toggleLanguage);
-  ptButton.addEventListener('click', toggleLanguage);
-  deButton.addEventListener('click', toggleLanguage);
-  frButton.addEventListener('click', toggleLanguage);
+    enButton.addEventListener('click', toggleLanguage);
+    ptButton.addEventListener('click', toggleLanguage);
+    deButton.addEventListener('click', toggleLanguage);
+    frButton.addEventListener('click', toggleLanguage);
   </script>
 </body>
+
 </html>
