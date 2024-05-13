@@ -1,36 +1,32 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <!--Why is this page inlined on a side note? Shouldn't the styling and JS be moved to separate files?-->
+<!--Not justifiable for the size of the project.-->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oliveira Relocations</title>
   <style>
-    /* Responsive design using flexbox */
+
     .serviceBoxContainer {
       display: flex;
       flex-wrap: wrap;
-      /* Allow boxes to wrap onto multiple lines */
       justify-content: space-between;
-      /* Distribute boxes evenly */
       margin: 0 auto;
-      /* Center boxes horizontally */
       width: 80%;
-      /* Limit container width for larger screens */
     }
 
     .serviceBox {
       width: 100%;
       margin: 20px auto;
-      /* Increase the top and bottom margin to add more space */
       padding: 15px;
       border: none;
       border-radius: 10px;
       background-color: #cccccc80;
-      /* Darker shade of grey */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* Increase the spread radius value for more depth */
       box-sizing: border-box;
     }
 
@@ -45,7 +41,6 @@
       font-size: 15px;
     }
 
-    /* Header styling */
     header {
       position: relative;
       text-align: center;
@@ -55,162 +50,214 @@
       font-size: 25px;
     }
 
+    contact {
+      font-size: 10px;
+      float: left;
+    }
+
     .logo {
       width: 370px;
       height: auto;
       margin-bottom: 10px;
     }
 
-    .languageSwitch {
+    .flagBoxContainer {
       position: relative;
-      /* Change absolute to relative positioning */
-      cursor: pointer;
       display: flex;
-      justify-content: flex-end;
-      /* Align buttons to the right */
+      justify-content: center;
       align-items: center;
-      margin-top: 10px;
-      /* Add margin to separate from the logo */
+      width: fit-content;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: auto;
+      margin-right: 0px;
+      padding: 5px;
+      border: none;
+      border-radius: 10px;
+      background-color: #cccccc80;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
     }
 
-    .languageSwitch span {
-      color: rgb(0, 0, 0);
-      font-weight: bold;
-      margin-right: 5px;
-      font-size: 12px;
+    .flagBoxContainer img {
+      width: 25px;
+      height: auto;
+      margin-top: 5px;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="https://imgur.com/8fj5yRB.jpg" alt="Logo" class="logo">
-    <div class="languageSwitch" id="languageSwitch">
-      <span id="en">EN</span>
-      <span id="pt">PT</span>
-      <span id="de">DE</span>
-      <span id="fr">FR</span>
-      <span id="nl">NL</span>
+    <div class="flagBoxContainer">
+      <span id="en">
+        <img src="https://imgur.com/RigBkEF.jpg" alt="English Flag">
+      </span>
+      <span id="pt">
+        <img src="https://imgur.com/HxXBKsX.jpg" alt="Portuguese Flag">
+      </span>
+      <span id="de">
+        <img src="https://imgur.com/ZKs0guA.jpg" alt="German Flag">
+      </span>
+      <span id="fr">
+        <img src="https://imgur.com/B0HwkvX.jpg" alt="French Flag">
+      </span>
+      <span id="nl">
+        <img src="https://imgur.com/pAyWdA3.jpg" alt="Dutch Flag">
+      </span>
+      <span id="ru">
+        <img src="https://imgur.com/X2TkDAg.jpg" alt="Russian Flag">
+      </span>
     </div>
+    <img src="https://imgur.com/wncVRKJ.jpg" alt="Logo" class="logo">
     <h1 data-en="We Provide the following services:" data-pt="Nós fornecemos os seguintes serviços:"
       data-de="Wir bieten folgende Dienstleistungen an:" data-fr="Nous fournissons les services suivants:"
-        data-nl="Wij bieden de volgende diensten aan:"
-    >We Provide
+      data-nl="Wij bieden de volgende diensten aan:" data-ru="Мы предоставляем следующие услуги:">We Provide
       the following services:</h1>
   </header>
   <section>
     <div class="serviceBoxContainer">
-      <div class="serviceBox" data-en="Relocations" data-pt="Mudanças" data-de="Umzug" data-fr="Déménagements" data-nl="Verhuizingen">
+      <div class="serviceBox" data-en="Relocations" data-pt="Mudanças" data-de="Umzug" data-fr="Déménagements"
+        data-nl="Verhuizingen" data-ru="Переезды">
         <h3>Relocations</h3>
         <p data-en="We offer a complete moving service, paying attention to every detail to make your experience as smooth as possible. From securely packing your belongings to arranging them at the final destination, we are here to ensure that everything goes seamlessly."
           data-pt="Mudanças- Oferecemos um serviço completo de mudanças, com atenção a todos os detalhes para tornar a sua experiência o mais tranquila possível. Desde o embalamento dos seus pertences com segurança à arrumação no destino final, estamos aqui para garantir que tudo corra sem problemas."
           data-de="Wir bieten einen umfassenden Umzugsservice, der auf jedes Detail achtet, um Ihre Erfahrung so reibungslos wie möglich zu gestalten. Vom sicheren Verpacken Ihrer Sachen bis hin zur Anordnung am endgültigen Ziel sind wir hier, um sicherzustellen, dass alles reibungslos verläuft."
           data-fr="Nous proposons un service complet de déménagement, en portant une attention particulière à chaque détail pour rendre votre expérience aussi fluide que possible. Du conditionnement sécurisé de vos biens à leur arrangement à la destination finale, nous sommes là pour garantir que tout se passe sans encombre."
-           data-nl="Wij bieden een complete verhuisservice, waarbij we aandacht besteden aan elk detail om uw ervaring zo soepel mogelijk te laten verlopen. Van het veilig inpakken van uw spullen tot het rangschikken ervan op de eindbestemming, wij zijn hier om ervoor te zorgen dat alles vlekkeloos verloopt."
-        >
+          data-nl="Wij bieden een complete verhuisservice, waarbij we aandacht besteden aan elk detail om uw ervaring zo soepel mogelijk te laten verlopen. Van het veilig inpakken van uw spullen tot het rangschikken ervan op de eindbestemming, wij zijn hier om ervoor te zorgen dat alles vlekkeloos verloopt."
+          data-ru="Мы предлагаем полный комплекс услуг по переезду, уделяя внимание каждой детали, чтобы сделать ваш переезд максимально комфортным.  От надежной упаковки ваших вещей до их размещения в конечном пункте назначения — мы здесь, чтобы гарантировать, что все пройдет гладко.">
           We offer a complete moving service, paying attention to every detail to make your experience as smooth as
           possible. From securely packing your belongings to arranging them at the final destination, we are here to
           ensure that everything goes seamlessly.
         </p>
       </div>
-      <div class="serviceBox" data-en="Packing" data-pt="Embalamos" data-de="Verpackung" data-fr="Emballage" data-nl="Inpakken">
+      <div class="serviceBox" data-en="Packing" data-pt="Embalamos" data-de="Verpackung" data-fr="Emballage"
+        data-nl="Inpakken" data-ru="Упаковка">
         <h3>Packing</h3>
-        <p data-en="If requested, we pack and protect all items individually with the utmost care, ensuring they arrive safely at their destination."
+        <p data-en="If requested, we pack and protect all items that need to be transported in boxes, individually and with the utmost care, ensuring they arrive safely at their destination."
           data-pt="Se requisitado, embalamos e protegemos todos os artigos individualmente com o máximo cuidado, garantindo que chegam em segurança ao seu destino."
           data-de="Auf Wunsch verpacken und schützen wir alle Gegenstände einzeln mit größter Sorgfalt, um sicherzustellen, dass sie sicher an ihr Ziel gelangen."
           data-fr="Sur demande, nous emballons et protégeons tous les articles individuellement avec le plus grand soin, afin de garantir qu'ils arrivent en toute sécurité à leur destination."
-           data-nl="Indien gewenst, verpakken en beschermen we alle items individueel met de grootste zorg, zodat ze veilig op hun bestemming aankomen."
-        >
-          If requested, we pack and protect all items individually with the utmost care, ensuring they arrive safely at their destination.
+          data-nl="Indien gewenst, verpakken en beschermen we alle items individueel met de grootste zorg, zodat ze veilig op hun bestemming aankomen."
+          data-ru="По запросу мы с особой тщательностью упаковываем и защищаем все предметы индивидуально, гарантируя их благополучную доставку в пункт назначения.">
+          If requested, we pack and protect all items that need to be transported in boxes, individually and with the
+          utmost care, ensuring they arrive safely at
+          their destination.
         </p>
       </div>
-      <div class="serviceBox" data-en="Unpacking" data-pt="Desembalamos" data-de="Auspacken" data-fr="Déballage" data-nl="Uitpakken">
+      <div class="serviceBox" data-en="Unpacking" data-pt="Desembalamos" data-de="Auspacken" data-fr="Déballage"
+        data-nl="Uitpakken" data-ru="Распаковка">
         <h3>Unpacking</h3>
         <p data-en="Upon arrival at the destination, we proceed with unpacking and arranging the items so you don't have to worry about a thing."
           data-pt="Já no destino, procedemos ao desembalamento e arrumação dos artigos para que não tenha de se preocupar com nada."
           data-de="Bei Ankunft am Zielort packen wir aus und ordnen die Gegenstände so an, dass Sie sich um nichts kümmern müssen."
           data-fr="À l'arrivée à la destination, nous procédons au déballage et à l'arrangement des articles pour que vous n'ayez pas à vous soucier de quoi que ce soit."
-           data-nl="Bij aankomst op de bestemming, gaan we over tot het uitpakken en rangschikken van de items, zodat u zich nergens zorgen over hoeft te maken."
-        >
-          Upon arrival at the destination, we proceed with unpacking and arranging the items so you don't have to worry about a thing.
+          data-nl="Bij aankomst op de bestemming, gaan we over tot het uitpakken en rangschikken van de items, zodat u zich nergens zorgen over hoeft te maken."
+          data-ru="По прибытии в пункт назначения мы приступаем к распаковке и укладке вещей, чтобы вам ни о чем не пришлось беспокоиться.">
+          Upon arrival at the destination, we proceed with unpacking and arranging the items so you don't have to worry
+          about a thing.
         </p>
       </div>
-      <div class="serviceBox" data-en="Dismantling" data-pt="Desmontagem" data-de="Demontage" data-fr="Démontage" data-nl="Demonteren">
+      <div class="serviceBox" data-en="Dismantling" data-pt="Desmontagem" data-de="Demontage" data-fr="Démontage"
+        data-nl="Demonteren" data-ru="Демонтаж">
         <h3>Dismantling</h3>
         <p data-en="If necessary, for larger furniture pieces, we professionally disassemble them into smaller parts, protecting each and every one with special blankets before wrapping them in film."
           data-pt="Se necessário, para mobília maior, desmontamos profissionalmente em peças menores, protegendo todas, sem exceção, com mantas especiais antes de as envolver em película."
           data-de="Falls erforderlich, für größere Möbelstücke zerlegen wir sie professionell in kleinere Teile und schützen jedes einzelne mit speziellen Decken, bevor wir sie in Folie einwickeln."
           data-fr="Si nécessaire, pour les meubles volumineux, nous les démontons professionnellement en pièces plus petites, en protégeant chacune avec des couvertures spéciales avant de les envelopper dans du film."
-           data-nl="Indien nodig, voor grotere meubelstukken, demonteren we ze professioneel in kleinere delen, waarbij we elk afzonderlijk beschermen met speciale dekens voordat we ze in folie wikkelen."
-        >
-          If necessary, for larger furniture pieces, we professionally disassemble them into smaller parts, protecting each and every one with special blankets before wrapping them in film.
+          data-nl="Indien nodig, voor grotere meubelstukken, demonteren we ze professioneel in kleinere delen, waarbij we elk afzonderlijk beschermen met speciale dekens voordat we ze in folie wikkelen."
+          data-ru="При необходимости более крупные предметы мебели мы профессионально разбираем на более мелкие части, защищая каждую специальными чехлами, прежде чем завернуть в пленку.">
+          If necessary, for larger furniture pieces, we professionally disassemble them into smaller parts, protecting
+          each and every one with special blankets before wrapping them in film.
         </p>
       </div>
-      <div class="serviceBox" data-en="Reassembling" data-pt="Remontagem" data-de="Montage"
-        data-fr="Remontage" data-nl="Hermonteren"
-      >
+      <div class="serviceBox" data-en="Reassembling" data-pt="Remontagem" data-de="Montage" data-fr="Remontage"
+        data-nl="Hermonteren" data-ru="Сборка">
         <h3>Reassembling</h3>
         <p data-en="Upon reaching the destination, we carry out the assembly of furniture and other items, if necessary."
           data-pt="Ao chegar ao destino, realizamos a montagem da mobília e outros itens, se necessário."
           data-de="Nach Erreichen des Ziels führen wir die Montage von Möbeln und anderen Gegenständen durch, falls erforderlich."
           data-fr="À l'arrivée à destination, nous effectuons le montage des meubles et autres articles, si nécessaire."
-          data-nl="Bij aankomst op de bestemming voeren we de montage van meubels en andere items uit, indien nodig.">
+          data-nl="Bij aankomst op de bestemming voeren we de montage van meubels en andere items uit, indien nodig."
+          data-ru="По прибытии в пункт назначения осуществляем сборку мебели и других предметов, если это необходимо.">
           Upon reaching the destination, we carry out the assembly of furniture and other items, if necessary.
         </p>
       </div>
-      <div class="serviceBox" data-en="Storage" data-pt="Armazenamento" data-de="Lagerung" data-fr="Stockage" data-nl="Opslag">
+      <div class="serviceBox" data-en="Storage" data-pt="Armazenamento" data-de="Lagerung" data-fr="Stockage"
+        data-nl="Opslag" data-ru="Хранилище">
         <h3>Storage</h3>
         <p data-en="We offer secure storage for your belongings, short or long term."
           data-pt="Oferecemos armazenamento seguro para os seus pertences, a curto ou a longo prazo."
           data-de="Wir bieten sichere Lagerung für Ihre Sachen, kurz- oder langfristig."
           data-fr="Nous proposons un stockage sécurisé pour vos biens, à court ou à long terme."
-          data-nl="Wij bieden veilige opslag voor uw spullen, kort of langdurig.">
+          data-nl="Wij bieden veilige opslag voor uw spullen, kort of langdurig."
+          data-ru="Мы предлагаем безопасное хранение ваших вещей на короткий или длительный срок.">
           We offer secure storage for your belongings, short or long term.
         </p>
       </div>
       <div class="serviceBox" data-en="Cleaning" data-pt="Limpeza" data-de="Reinigung" data-fr="Nettoyage"
-           data-nl="Schoonmaak"
-      >
+        data-nl="Schoonmaak" data-ru="Очистка">
         <h3>Cleaning</h3>
         <p data-en="Our cleaning service, either superficial or detailed depending on the agreement with the client, ensures that both houses are left spotless."
           data-pt="O nosso serviço de limpeza superficial ou ao pormenor, dependendo do acordo feito com o cliente, garante que ambas as casas fiquem impecáveis."
           data-de="Unser Reinigungsservice, entweder oberflächlich oder detailliert je nach Vereinbarung mit dem Kunden, sorgt dafür, dass beide Häuser makellos hinterlassen werden."
           data-fr="Notre service de nettoyage, superficiel ou détaillé selon l'accord avec le client, garantit que les deux maisons sont laissées impeccables."
-          data-nl="Onze schoonmaakdienst, oppervlakkig of gedetailleerd afhankelijk van de overeenkomst met de klant, zorgt ervoor dat beide huizen brandschoon worden achtergelaten." >
-          Our cleaning service, either superficial or detailed depending on the agreement with the client, ensures that both houses are left spotless.
+          data-nl="Onze schoonmaakdienst, oppervlakkig of gedetailleerd afhankelijk van de overeenkomst met de klant, zorgt ervoor dat beide huizen brandschoon worden achtergelaten."
+          data-ru="Наша услуга по уборке, поверхностной или детальной, в зависимости от договоренности с клиентом, гарантирует, что оба дома останутся безупречными.">
+          Our cleaning service, either superficial or detailed depending on the agreement with the client, ensures that
+          both houses are left spotless.
         </p>
       </div>
       <div class="serviceBox" data-en="Minor Services" data-pt="Pequenos Serviços" data-de="Kleinere Dienstleistungen"
-        data-fr="Petits services" data-nl="Kleine diensten"
-      >
+        data-fr="Petits services" data-nl="Kleine diensten" data-ru="Мелкие услуги">
         <h3>Minor Services</h3>
         <p data-en="We provide minor wall repair services for small holes resulting from the installation of frames, mirrors, among others. Additionally, we also carry out the installation of lamps and other decorative elements in your new home."
           data-pt="Serviços de reparação de pequenos furos nas paredes, resultantes da instalação de quadros, espelhos, entre outros. Além disso, também realizamos a instalação de abajures e outros elementos decorativos na sua casa nova."
           data-de="Wir bieten Reparaturdienste für kleine Wandlöcher an, die durch die Installation von Bildern, Spiegeln und anderen Gegenständen entstanden sind. Darüber hinaus führen wir auch die Installation von Lampen und anderen dekorativen Elementen in Ihrem neuen Zuhause durch."
           data-fr="Nous proposons des services de réparation de petits trous dans les murs, résultant de l'installation de cadres, de miroirs, entre autres. De plus, nous réalisons également l'installation de lampes et autres éléments décoratifs dans votre nouvelle maison."
-          data-nl="We bieden kleine muurreparatiediensten aan voor kleine gaten die zijn ontstaan door de installatie van lijsten, spiegels, onder andere. Daarnaast voeren we ook de installatie van lampen en andere decoratieve elementen in uw nieuwe huis uit.">
-          We provide minor wall repair services for small holes resulting from the installation of frames, mirrors, among others. Additionally, we also carry out the installation of lamps and other decorative elements in your new home.
+          data-nl="We bieden kleine muurreparatiediensten aan voor kleine gaten die zijn ontstaan door de installatie van lijsten, spiegels, onder andere. Daarnaast voeren we ook de installatie van lampen en andere decoratieve elementen in uw nieuwe huis uit."
+          data-ru="Мы предоставляем услуги мелкого ремонта стен для небольших дыр, образовавшихся в результате установки рам, зеркал и т. д.  Дополнительно мы также осуществляем установку светильников и других декоративных элементов в вашем новом доме.">
+          We provide minor wall repair services for small holes resulting from the installation of frames, mirrors,
+          among others. Additionally, we also carry out the installation of lamps and other decorative elements in your
+          new home.
         </p>
       </div>
     </div>
   </section>
 
-
   <script>
     var language = 'en';
     var enButton = document.getElementById('en');
-    var enButton = document.getElementById('en');
-    enButton.style.color = 'grey';
-    enButton.style.textDecoration = 'none';
     var ptButton = document.getElementById('pt');
     var deButton = document.getElementById('de');
     var frButton = document.getElementById('fr');
     var nlButton = document.getElementById('nl');
+    var ruButton = document.getElementById('ru');
+
+    function setButtonStyles() {
+
+      var flagImages = document.querySelectorAll('.flagBoxContainer img');
+      flagImages.forEach(function (img) {
+        img.style.width = '25px';
+        img.style.height = 'auto';
+        img.style.marginRight = '5px';
+        img.style.cursor = 'pointer';
+      });
+
+      // Set size of current language flag smaller
+      var currentLanguageImg = document.querySelector('#' + language + ' img');
+      currentLanguageImg.style.width = '20px';
+
+      var allButtons = [enButton, ptButton, deButton, frButton, nlButton, ruButton];
+      allButtons.forEach(function (btn) {
+        btn.style.pointerEvents = btn.id === language ? 'none' : 'auto';
+      });
+    }
 
     function toggleLanguage() {
       var selectedLanguage = this.id;
 
-      if (selectedLanguage !== language) { // Check if the selected language is different from the current language
+      if (selectedLanguage !== language) {
         var elementsToTranslate = document.querySelectorAll('.serviceBox');
 
         elementsToTranslate.forEach(function (element) {
@@ -231,8 +278,11 @@
             case 'nl':
               text = element.getAttribute('data-nl');
               break;
+            case 'ru':
+              text = element.getAttribute('data-ru');
+              break;
             default:
-              text = element.getAttribute('data-en'); // Default to English if language is not recognized
+              text = element.getAttribute('data-en');
           }
 
           element.querySelector('h3').textContent = text;
@@ -244,29 +294,20 @@
           headerTitle.textContent = headerTitle.getAttribute('data-' + selectedLanguage);
         });
 
-        // Update language variable
         language = selectedLanguage;
 
-        // Toggling button styles
-        enButton.style.pointerEvents = language === 'en' ? 'none' : 'auto';
-        ptButton.style.pointerEvents = language === 'pt' ? 'none' : 'auto';
-        deButton.style.pointerEvents = language === 'de' ? 'none' : 'auto';
-        frButton.style.pointerEvents = language === 'fr' ? 'none' : 'auto';
-        nlButton.style.pointerEvents = language === 'nl' ? 'none' : 'auto';
-
-        enButton.style.color = language === 'en' ? 'grey' : 'black';
-        ptButton.style.color = language === 'pt' ? 'grey' : 'black';
-        deButton.style.color = language === 'de' ? 'grey' : 'black';
-        frButton.style.color = language === 'fr' ? 'grey' : 'black';
-        nlButton.style.color = language === 'nl' ? 'grey' : 'black';
+        setButtonStyles();
       }
     }
+
+    setButtonStyles();
 
     enButton.addEventListener('click', toggleLanguage);
     ptButton.addEventListener('click', toggleLanguage);
     deButton.addEventListener('click', toggleLanguage);
     frButton.addEventListener('click', toggleLanguage);
     nlButton.addEventListener('click', toggleLanguage);
+    ruButton.addEventListener('click', toggleLanguage);
   </script>
 </body>
 
